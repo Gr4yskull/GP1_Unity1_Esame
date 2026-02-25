@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 15
   damagePerHit: 4
-  speed: 5
+  speed: 150
 --- !u!114 &6468049076035718629
 MonoBehaviour:
   m_ObjectHideFlags: 0

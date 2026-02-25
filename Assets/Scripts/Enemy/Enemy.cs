@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     {
         //get rigidbody
         rb=GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.left*speed,ForceMode.Impulse);
+        rb.AddForce(Vector3.left*speed*Time.deltaTime,ForceMode.Impulse);
     }
 
 }

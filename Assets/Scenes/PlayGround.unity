@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 538397849}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: 0.35, z: 0}
+  m_LocalPosition: {x: 16, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -568,10 +568,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3177077984796347835, guid: b84bb44b5f62249378c67361aff9b295, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3835974003368195980, guid: b84bb44b5f62249378c67361aff9b295, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.68
@@ -628,10 +624,6 @@ PrefabInstance:
     - target: {fileID: 2606237906909322778, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
       propertyPath: m_Name
       value: TankEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2606237906909322778, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4048986891473246367, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
       propertyPath: m_LocalPosition.x
