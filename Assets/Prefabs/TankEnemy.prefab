@@ -156,3 +156,4 @@ MonoBehaviour:
   health: 15
   damagePerHit: 4
   speed: 150
+  coins: 10

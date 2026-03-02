@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] float damagePerHit;
     [SerializeField] float speed;
+    [SerializeField] int coins;
     Rigidbody rb;
 
     private void Start()
