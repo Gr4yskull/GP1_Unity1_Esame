@@ -6,12 +6,16 @@ public class EnemyDamage : Enemy,IDamageable
     void OnTriggerEnter(Collider other)
     {
        TakeDamage(testdamage);
-       Despawn(); 
+        if (maxHealth <= 0)
+        {
+            Despawn();
+        }
+        
     }
 
-    public void TakeDamage(float danno)
+    public void TakeDamage(float damage)
     {
-        
+        currentHealth-=damage;
     }
 
     public void Despawn()

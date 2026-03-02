@@ -10,8 +10,12 @@ public class GameManager : MonoBehaviour
 {
     public GameStatus status;
     public int coins;
-   //public static event Action AddCoins;
+    //public static event Action AddCoins;
 
+    private void Start()
+    {
+        status=GameStatus.GameRunning;
+    }
     private void Update()
     {
         if(status==GameStatus.GamePaused)
