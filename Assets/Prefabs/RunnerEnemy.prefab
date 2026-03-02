@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6723111623978655444}
   - component: {fileID: 4092612895080772116}
   - component: {fileID: 7074736758664410522}
-  - component: {fileID: 2436874865849877655}
   - component: {fileID: 2966674971954059292}
   m_Layer: 3
   m_Name: RunnerEnemy
@@ -142,21 +141,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
---- !u!114 &2436874865849877655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3177077984796347835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9797d4117cb74c43a1b3587357766e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 5
-  damagePerHit: 2
-  speed: 275
 --- !u!114 &2966674971954059292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dc69eab5ea446df9a7347b55405d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  health: 5
+  damagePerHit: 2
+  speed: 275

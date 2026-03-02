@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour,IDamageable
+public class EnemyDamage : Enemy,IDamageable
 {
     float testdamage;
     void OnTriggerEnter(Collider other)
