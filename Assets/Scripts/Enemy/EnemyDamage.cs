@@ -2,16 +2,7 @@ using UnityEngine;
 
 public class EnemyDamage : Enemy,IDamageable
 {
-    float testdamage;
-    void OnTriggerEnter(Collider other)
-    {
-       TakeDamage(testdamage);
-        if (maxHealth <= 0)
-        {
-            Despawn();
-        }
-        
-    }
+    public float damagePerHit;
 
     public void TakeDamage(float damage)
     {

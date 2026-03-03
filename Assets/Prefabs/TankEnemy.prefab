@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6468049076035718629}
   m_Layer: 3
   m_Name: TankEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5dc69eab5ea446df9a7347b55405d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
-  health: 15
-  damagePerHit: 4
+  maxHealth: 15
+  currentHealth: 0
   speed: 150
   coins: 10
+  damagePerHit: 4
