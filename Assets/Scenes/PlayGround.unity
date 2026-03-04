@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e78731e6e1a4795ad6aae77aa03b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  maxHP: 5
+  maxHP: 100
   currentHP: 0
 --- !u!1 &651001865
 GameObject:
@@ -1734,7 +1734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &651001866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2113,10 +2113,11 @@ MonoBehaviour:
   enemy:
   - {fileID: 2606237906909322778, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
   - {fileID: 3177077984796347835, guid: b84bb44b5f62249378c67361aff9b295, type: 3}
-  spawnRate: 5
+  spawnRate: 1
   spawnCounter: 0
   minRate: 0.5
   changedRate: 0.5
+  damageBuff: 1
 --- !u!4 &954298207
 Transform:
   m_ObjectHideFlags: 0
@@ -3872,7 +3873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4048986891473246367, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3568203
+      value: -15.38
       objectReference: {fileID: 0}
     - target: {fileID: 4048986891473246367, guid: ee89d2145e9904711bd11a82770e7669, type: 3}
       propertyPath: m_LocalPosition.y

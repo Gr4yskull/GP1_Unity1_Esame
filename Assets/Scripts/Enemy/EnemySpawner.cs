@@ -9,6 +9,9 @@ public class EnemySpawner : MonoBehaviour
     public int spawnCounter=0;
     [SerializeField] float minRate;
     [SerializeField] float changedRate;
+    [SerializeField] float damageBuff;
+    float currentBuff;
+    EnemyDamage enemyDamage;
 
     private void Update()
     {
@@ -29,6 +32,9 @@ public class EnemySpawner : MonoBehaviour
                 //decrease spawn rate and reset counter
                 spawnRate-=changedRate;
                 spawnCounter=0;
+
+                //adds buffs 
+                currentBuff+=damageBuff;
             }
             
             //timer reset

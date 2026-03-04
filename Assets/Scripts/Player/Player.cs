@@ -21,6 +21,7 @@ public class Player : MonoBehaviour,IDamageable
         {
             enemy=other.GetComponent<EnemyDamage>();
             TakeDamage(enemy.damagePerHit);
+            enemy.Despawn();
         }
        
     
