@@ -7,8 +7,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] public int coins;
     Rigidbody rb;
+    EnemySpawner buff;
 
-    public void Start()
+    protected virtual void Start()
     {
         currentHealth=maxHealth;
         //get rigidbody

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public enum GameStatus
 {
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameStatus status;
     public int coins;
     public static GameManager Instance;
-    //public static event Action AddCoins;
+    public static event Action OnCoinsAdded;
 
     private void Awake()
     {
@@ -21,12 +22,27 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        //DontDestroyOnLoad(this);
+    }
+    public void OnEnable()
+    {
+        EnemyDamage.OnEnemyDeath+=GetCoins;
+    }
+
+    public void Disable()
+    {
+        EnemyDamage.OnEnemyDeath-=GetCoins;
+    }
+
+    public void GetCoins(int money)
+    {
+        coins+=money;
+        OnCoinsAdded?.Invoke();
     }
     
     private void Start()
     {
         status=GameStatus.GameRunning;
+        GetCoins(50);
     }
     private void Update()
     {

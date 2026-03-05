@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - Normal
+  - MG
+  - Area
   layers:
   - Default
   - TransparentFX

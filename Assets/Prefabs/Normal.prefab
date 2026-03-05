@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dda111632066b40b6923c3812357c3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 334700411857920797}
   m_Layer: 0
   m_Name: Normal
-  m_TagString: Untagged
+  m_TagString: Normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +446,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dda111632066b40b6923c3812357c3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -560,7 +560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dda111632066b40b6923c3812357c3d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -616,11 +616,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8855414789689413172}
-  - component: {fileID: 3648983415328583113}
+  - component: {fileID: 1706208722896676931}
   m_Layer: 0
   m_Name: TurretShooter
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -633,13 +633,13 @@ Transform:
   m_GameObject: {fileID: 9187464575863832527}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4000001, y: 1.71, z: 1.848}
+  m_LocalPosition: {x: 0.38, y: 1.884, z: 2.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 334700411857920797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3648983415328583113
+--- !u!114 &1706208722896676931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -648,10 +648,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9187464575863832527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3543b02269b1e4db4b4e24dd346ae4e3, type: 3}
+  m_Script: {fileID: 11500000, guid: ca72b3720d92a48cf98067ded6041191, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Turrets
-  bullet: {fileID: 3760915154381648249, guid: d8aab9165d3184d97aff8cd9bd84c4af, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bullet: {fileID: 7586054359351332722, guid: e177e9d5a91644f1c9d3cbfa4e6f46bc, type: 3}
   bulletRate: 3
-  damage: 33
-  cost: 3
+  cost: 5
+  timer: 0

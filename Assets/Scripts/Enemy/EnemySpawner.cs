@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -9,9 +10,10 @@ public class EnemySpawner : MonoBehaviour
     public int spawnCounter=0;
     [SerializeField] float minRate;
     [SerializeField] float changedRate;
-    [SerializeField] float damageBuff;
-    float currentBuff;
-    EnemyDamage enemyDamage;
+    [SerializeField] public float damageBuff;
+    float currentBuff=0;
+
+
 
     private void Update()
     {
@@ -21,19 +23,21 @@ public class EnemySpawner : MonoBehaviour
         {
 
             //randomic spawn and spawn counter update   
-            enemyIndex=Random.Range(0,enemy.Length);
+            enemyIndex=UnityEngine.Random.Range(0,enemy.Length);
             Instantiate(enemy[enemyIndex], transform.position,transform.rotation,transform);
             spawnCounter++;
 
         
             //if the counter is =10 and spawn rate >=minrate
-            if(spawnCounter==10 && spawnRate>=minRate)
+            if(spawnCounter==10)
             {
-                //decrease spawn rate and reset counter
-                spawnRate-=changedRate;
-                spawnCounter=0;
+                if(spawnRate>minRate)
+                    //decrease spawn rate
+                    spawnRate-=changedRate;
 
-                //adds buffs 
+                //resets spawn counter
+                spawnCounter=0;
+                //adds DMG buffs 
                 currentBuff+=damageBuff;
             }
             

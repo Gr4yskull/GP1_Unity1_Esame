@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject gameOver;
     [SerializeField] TMP_Text coins;
     [SerializeField] TMP_Text enemiesDefeated;
+    [SerializeField] Button NormalBTTN,machineGunBTTN, areaBTTN;
     Player player;
 
     EnemySpawner enemy;
@@ -16,12 +17,14 @@ public class UIManager : MonoBehaviour
     {
         Player.OnPlayerDeath+=GameOver;
         Player.OnHit+=UpdateHealth;
+        GameManager.OnCoinsAdded+=UpdateCounter;
     }
 
     private void OnDisable()
     {
         Player.OnPlayerDeath-=GameOver;
         Player.OnHit-=UpdateHealth;
+        GameManager.OnCoinsAdded-=UpdateCounter;
     }
 
     private void Start()
@@ -30,14 +33,26 @@ public class UIManager : MonoBehaviour
         gameOver.SetActive(false);
     }
 
+    private void Update()
+    {
+        //check turret costs to make turret buttons interactable
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
+    //Updates the HUD Helthbar
     public void UpdateHealth()
     {
         health.fillAmount=player.currentHP/player.maxHP;
+    }
+
+    //Updates the HUD currency
+    public void UpdateCounter()
+    {
+        coins.text="Coins:"+GameManager.Instance.coins.ToString();
     }
 
     //when the event OnPlayerDeath is called 

@@ -1,9 +1,12 @@
+using System;
 using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
     Rigidbody rb;
-    float speed=300f;
+    public float speed=300f;
+    [SerializeField] float damage;
+    public static event Action <float> OnEnemyHit;
 
     private void Start()
     {
@@ -13,6 +16,8 @@ public class Projectiles : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Enemy"))
+        OnEnemyHit?.Invoke(damage);
         Destroy(gameObject);
     }
 }
