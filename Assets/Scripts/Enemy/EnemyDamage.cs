@@ -1,7 +1,4 @@
 using System;
-using JetBrains.Annotations;
-using UnityEngine;
-using UnityEngine.Video;
 
 public class EnemyDamage : Enemy,IDamageable
 {
