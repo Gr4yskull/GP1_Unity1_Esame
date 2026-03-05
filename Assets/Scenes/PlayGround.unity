@@ -2893,7 +2893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2446228489889377991, guid: 04562d2f313314a69969c4f9b575b837, type: 3}
       propertyPath: radius
-      value: 2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -2446228489889377991, guid: 04562d2f313314a69969c4f9b575b837, type: 3}
       propertyPath: interactableLayer.m_Bits
@@ -2913,7 +2913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4448123266050004906, guid: 04562d2f313314a69969c4f9b575b837, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.061592
+      value: -18.85
       objectReference: {fileID: 0}
     - target: {fileID: 4448123266050004906, guid: 04562d2f313314a69969c4f9b575b837, type: 3}
       propertyPath: m_LocalRotation.w
