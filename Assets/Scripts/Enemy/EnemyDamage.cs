@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class EnemyDamage : Enemy,IDamageable
 {
@@ -7,17 +8,9 @@ public class EnemyDamage : Enemy,IDamageable
     public float damageBuff;
     public static event Action <int> OnEnemyDeath;
 
-    public void OnEnable()
-    {
-        Projectiles.OnEnemyHit+=TakeDamage;
-    }
-
-    public void OnDisable()
-    {
-        Projectiles.OnEnemyHit-=TakeDamage;
-    }
     public void TakeDamage(float damage)
     {
+         Debug.Log("DENTRO ENEMYDAMAGE");
         currentHealth-=damage;
         if (currentHealth <= 0)
         {
@@ -28,6 +21,6 @@ public class EnemyDamage : Enemy,IDamageable
     public void Despawn()
     {
         OnEnemyDeath?.Invoke(coins);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
