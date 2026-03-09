@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6372419649e2e4e9b89d286ff5ede169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaProjectiles
-  speed: 0
+  speed: 300
   damage: 7
   interactableLayer:
     serializedVersion: 2
     m_Bits: 4294967295
-  currentRadius: 0
+  radius: 1
