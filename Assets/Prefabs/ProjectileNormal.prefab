@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 688465381733240755}
   m_Layer: 0
   m_Name: ProjectileNormal
-  m_TagString: Untagged
+  m_TagString: Normal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,4 +154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectiles
   speed: 300
-  damage: 2
+  currentDamage: 2

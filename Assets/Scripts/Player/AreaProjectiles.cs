@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
+using System.Xml.Serialization;
 
 public class AreaProjectiles : MonoBehaviour
 {
@@ -7,7 +9,9 @@ public class AreaProjectiles : MonoBehaviour
     public float speed=300f;
     [SerializeField] float damage;
     [SerializeField] private LayerMask interactableLayer;
-    [SerializeField] float radius;
+    public float radius;
+    [SerializeField] public float currentRadius=1;
+
     private bool hasExploded=false;
     private List <Enemy> enemy=new();
 
@@ -17,7 +21,6 @@ public class AreaProjectiles : MonoBehaviour
         rb=GetComponent<Rigidbody>();
         rb.AddForce(Vector3.forward*speed*Time.deltaTime,ForceMode.Impulse);
     }
-
     //when it hits something
     void OnTriggerEnter(Collider other)
     {

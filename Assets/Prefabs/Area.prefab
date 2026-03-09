@@ -482,7 +482,7 @@ Transform:
   m_GameObject: {fileID: 8371193481563336586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.399, y: 1.71, z: 2}
+  m_LocalPosition: {x: 0.399, y: 1.71, z: 2.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -501,9 +501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   bullet: {fileID: 7338986166833512000, guid: 04562d2f313314a69969c4f9b575b837, type: 3}
-  bulletRate: 5
-  cost: 15
   timer: 0
+  bulletRate: 5
 --- !u!1 &8694443579399096192
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,9 +512,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5959010171429006781}
+  - component: {fileID: -197385230924532789}
   m_Layer: 0
   m_Name: Area
-  m_TagString: Area
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,6 +541,21 @@ Transform:
   - {fileID: 790498938451404777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &-197385230924532789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694443579399096192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ee06cd7e48348ce985755c5e27a49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
+  normalCost: 5
+  machineGunCost: 10
+  areaCost: 15
 --- !u!1 &9084677250534799318
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,19 +1,16 @@
 using UnityEngine;
 
-
-public class Projectiles : MonoBehaviour
+public class MGProjectiles : MonoBehaviour
 {
     Rigidbody rb;
     public float speed=300f;
-    [SerializeField] public static float damage=2;
-    [SerializeField] private float currentDamage;
+    [SerializeField] float damage;
 
     private void Start()
     {
         //gets rigidbody and moves projectile
         rb=GetComponent<Rigidbody>();
         rb.AddForce(Vector3.forward*speed*Time.deltaTime,ForceMode.Impulse);
-        currentDamage=damage;
     }
 
 
@@ -28,7 +25,7 @@ public class Projectiles : MonoBehaviour
             //deals damage to enemy
             if (enemyHit != null)
             {
-                enemyHit.TakeDamage(currentDamage);
+                enemyHit.TakeDamage(damage);
             }
         }
 

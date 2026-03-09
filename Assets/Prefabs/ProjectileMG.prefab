@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2571138879871051534}
   - component: {fileID: 8200829837871440324}
   - component: {fileID: 6565536631981860701}
-  - component: {fileID: 4469952380545008709}
+  - component: {fileID: 5961674263439458771}
   m_Layer: 0
   m_Name: ProjectileMG
   m_TagString: Untagged
@@ -141,7 +141,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4469952380545008709
+--- !u!114 &5961674263439458771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,8 +150,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 628479193464663571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba0a15d6266c4ff281d333097061369, type: 3}
+  m_Script: {fileID: 11500000, guid: 55f9ad77720ce44d6a84d8a22ac72b54, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Projectiles
+  m_EditorClassIdentifier: Assembly-CSharp::MGProjectiles
   speed: 300
   damage: 4
