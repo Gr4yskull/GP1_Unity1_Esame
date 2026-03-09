@@ -20,7 +20,7 @@ public class Player : MonoBehaviour,IDamageable
         if (other.CompareTag("Enemy"))
         {
             enemy=other.GetComponent<EnemyDamage>();
-            TakeDamage(enemy.damagePerHit);
+            TakeDamage(enemy.currentDamagePerHit);
             enemy.Despawn();
         }
        

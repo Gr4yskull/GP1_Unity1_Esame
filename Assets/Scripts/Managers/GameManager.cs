@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         coins+=money;
         OnCoinsAdded?.Invoke();
     }
+    public void RemoveCoins(int money)
+    {
+        coins-=money;
+        OnCoinsAdded.Invoke();
+    }
     
     private void Start()
     {

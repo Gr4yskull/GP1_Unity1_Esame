@@ -24,8 +24,14 @@ public class EnemySpawner : MonoBehaviour
 
             //randomic spawn and spawn counter update   
             enemyIndex=UnityEngine.Random.Range(0,enemy.Length);
-            Instantiate(enemy[enemyIndex], transform.position,transform.rotation,transform);
+            GameObject newEnemy=Instantiate(enemy[enemyIndex], transform.position,transform.rotation,transform);
+            EnemyDamage newDamage=newEnemy.GetComponent<EnemyDamage>();
             spawnCounter++;
+
+            if (newDamage != null)
+            {
+                newDamage.SetAttack(damageBuff);
+            }
 
         
             //if the counter is =10 and spawn rate >=minrate

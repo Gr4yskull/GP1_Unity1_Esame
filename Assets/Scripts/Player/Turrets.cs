@@ -4,6 +4,6 @@ public class Turrets : MonoBehaviour
 {
     [SerializeField] public GameObject bullet;
     [SerializeField] public float bulletRate;
-    [SerializeField] public int cost;
+    [SerializeField] public int upgradeLevel;
     public float timer;
 }

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text coins;
     [SerializeField] TMP_Text enemiesDefeated;
     [SerializeField] Button NormalBTTN,machineGunBTTN, areaBTTN;
+    public int enemiesKilled=0;
     Player player;
 
     EnemySpawner enemy;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
         Player.OnPlayerDeath+=GameOver;
         Player.OnHit+=UpdateHealth;
         GameManager.OnCoinsAdded+=UpdateCounter;
+        EnemyDamage.OnKill+=UpdateKillCount;
     }
 
     private void OnDisable()
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour
         Player.OnPlayerDeath-=GameOver;
         Player.OnHit-=UpdateHealth;
         GameManager.OnCoinsAdded-=UpdateCounter;
+        EnemyDamage.OnKill-=UpdateKillCount;
     }
 
     private void Start()
@@ -55,13 +58,19 @@ public class UIManager : MonoBehaviour
         coins.text="Coins:"+GameManager.Instance.coins.ToString();
     }
 
+    public void UpdateKillCount()
+    {
+        enemiesKilled++;
+    }
+
+
     //when the event OnPlayerDeath is called 
     public void GameOver()
     {
         //pauses the game, activates the game over screen and shows the enemies defeated text
         GameManager.Instance.status=GameStatus.GamePaused;
         gameOver.SetActive(true);
-        enemiesDefeated.text="Enemies defeated:";//inserisci numero nemici sconfitti;
+        enemiesDefeated.text="Enemies defeated: "+ enemiesKilled;//inserisci numero nemici sconfitti;
     }
 }
 

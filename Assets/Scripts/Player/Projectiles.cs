@@ -23,11 +23,11 @@ public class Projectiles : MonoBehaviour
             //gets interface
             IDamageable enemyHit=other.GetComponent<IDamageable>();
 
-        //deals damage to enemy
-        if (enemyHit != null)
-        {
-            enemyHit.TakeDamage(damage);
-        }
+            //deals damage to enemy
+            if (enemyHit != null)
+            {
+                enemyHit.TakeDamage(damage);
+            }
         }
 
         //despawns if it hits an enemy or the projectile remover
