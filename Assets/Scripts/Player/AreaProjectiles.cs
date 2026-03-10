@@ -35,11 +35,14 @@ public class AreaProjectiles : UpgradeManager
             //for each collider got
             foreach(Collider enemy in explosionArea)
             {
-                //deals damage
-                enemy.TryGetComponent(out IDamageable damageable);
-                damageable.TakeDamage(damage);
-                //bool to prevent it from dealing double damage
-                hasExploded=true;
+                //checks component
+                if(enemy.TryGetComponent(out IDamageable damageable))
+                {
+                    //deals damage
+                    damageable.TakeDamage(damage);
+                    //bool to prevent it from dealing double damage
+                    hasExploded=true;
+                }
             }
         }
         Destroy(gameObject);

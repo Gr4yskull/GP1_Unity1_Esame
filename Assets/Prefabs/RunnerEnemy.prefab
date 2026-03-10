@@ -157,4 +157,5 @@ MonoBehaviour:
   currentHealth: 0
   speed: 275
   coins: 5
-  damagePerHit: 2
+  damagePerHit: 1
+  currentDamagePerHit: 0

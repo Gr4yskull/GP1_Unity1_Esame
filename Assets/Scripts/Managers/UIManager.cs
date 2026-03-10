@@ -7,10 +7,18 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] Image health;
     [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject pauseMenu;
     [SerializeField] TMP_Text coins;
     [SerializeField] TMP_Text enemiesDefeated;
+    [SerializeField] TMP_Text timerTXT;
     [SerializeField] Button NormalBTTN,machineGunBTTN, areaBTTN;
     public int enemiesKilled=0;
+    public bool isPaused;
+    string minutesTXT;
+    string secondsTXT;
+    float timer;
+    float minutes;
+    float seconds;
     Player player;
 
     EnemySpawner enemy;
@@ -34,22 +42,35 @@ public class UIManager : MonoBehaviour
     {
         player=FindAnyObjectByType<Player>();
         gameOver.SetActive(false);
+        ClosePauseMenu();
     }
 
     private void Update()
     {
+        timer+=Time.deltaTime;
+        minutes=Mathf.Floor(timer/60);
+        seconds=Mathf.Floor(timer%60);
         //check turret costs to make turret buttons interactable
-        if (GameManager.Instance.coins >= 5)
-            NormalBTTN.interactable=true;
-        if (GameManager.Instance.coins >= 10)
-            machineGunBTTN.interactable=true;
-        if(GameManager.Instance.coins>=15)
-            areaBTTN.interactable=true;
+        if (GameManager.Instance.coins < 5)
+            NormalBTTN.interactable=false;
+        if (GameManager.Instance.coins < 10)
+            machineGunBTTN.interactable=false;
+        if(GameManager.Instance.coins < 15)
+            areaBTTN.interactable=false;
         else
         {
-            NormalBTTN.interactable=false;
-            machineGunBTTN.interactable=false;
-            areaBTTN.interactable=false;
+            NormalBTTN.interactable=true;
+            machineGunBTTN.interactable=true;
+            areaBTTN.interactable=true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused==false)
+        {
+            OpenPauseMenu();
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        {
+            ClosePauseMenu();
         }
     }
 
@@ -57,6 +78,20 @@ public class UIManager : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OpenPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        isPaused=true;
+        GameManager.Instance.status=GameStatus.GamePaused;
+    }
+
+    public void ClosePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        isPaused=false;
+        GameManager.Instance.status=GameStatus.GameRunning;
     }
 
     //Updates the HUD Helthbar
@@ -85,6 +120,8 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.status=GameStatus.GamePaused;
         gameOver.SetActive(true);
         enemiesDefeated.text="Enemies defeated: "+ enemiesKilled;//inserisci numero nemici sconfitti;
+        timerTXT.text=minutesTXT+" "+secondsTXT;
+        timerTXT.text=string.Format("{0:00}:{1:00}",minutes,seconds);
     }
 }
 
