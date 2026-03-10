@@ -24,17 +24,17 @@ public class UpgradeManager : MonoBehaviour,IPointerClickHandler
                 normalCost*=2;
                 break;
 
-            // case turret.machineGun:
-            //      if(GameManager.Instance.coins<=machineGunCost)
-            //         return;
-            //     GameObject machineGun=GameObject.FindWithTag("MG");
-            //     Shooter Rate=machineGun.GetComponent<Shooter>();
-            //     if(Rate.bulletRate<=1)
-            //         Rate.bulletRate-=0.5f;
+            case turret.machineGun:
+                 if(GameManager.Instance.coins<=machineGunCost)
+                    return;
+                GameObject machineGun=GameObject.FindWithTag("MG");
+                Shooter Rate=machineGun.GetComponentInChildren<Shooter>();
+                if(Rate.bulletRate<=1)
+                    Rate.bulletRate-=0.5f;
                 
-            //     GameManager.Instance.RemoveCoins(machineGunCost);
-            //     machineGunCost*=2;
-            //     break;
+                GameManager.Instance.RemoveCoins(machineGunCost);
+                machineGunCost*=2;
+                break;
 
             // case turret.area:
             //      if(GameManager.Instance.coins<=areaCost)

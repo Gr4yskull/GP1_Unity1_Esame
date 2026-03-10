@@ -15,7 +15,7 @@ public class AreaProjectiles : MonoBehaviour
     private void Start()
     {
         rb=GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward*speed*Time.deltaTime,ForceMode.Impulse);
+        rb.AddForce(transform.forward*speed*Time.deltaTime,ForceMode.Impulse);
     }
 
     //when it hits something

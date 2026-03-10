@@ -12,7 +12,7 @@ public class Projectiles : MonoBehaviour
     {
         //gets rigidbody and moves projectile
         rb=GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward*speed*Time.deltaTime,ForceMode.Impulse);
+        rb.AddForce(transform.forward*speed*Time.deltaTime,ForceMode.Impulse);
         currentDamage=damage;
     }
 
