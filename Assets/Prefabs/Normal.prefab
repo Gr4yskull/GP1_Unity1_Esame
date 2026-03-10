@@ -254,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 6122833801049393434}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.37071, y: 0, z: -0.46579}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -278,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ee06cd7e48348ce985755c5e27a49e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
-  turrets: []
   normalCost: 5
   machineGunCost: 10
   areaCost: 15
@@ -669,7 +668,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   bullet: {fileID: 7586054359351332722, guid: e177e9d5a91644f1c9d3cbfa4e6f46bc, type: 3}
-  bulletRate: 3
-  upgradeLevel: 0
-  damage: 0
   timer: 0
+  bulletRate: 3

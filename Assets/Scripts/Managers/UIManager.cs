@@ -39,6 +39,18 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         //check turret costs to make turret buttons interactable
+        if (GameManager.Instance.coins >= 5)
+            NormalBTTN.interactable=true;
+        if (GameManager.Instance.coins >= 10)
+            machineGunBTTN.interactable=true;
+        if(GameManager.Instance.coins>=15)
+            areaBTTN.interactable=true;
+        else
+        {
+            NormalBTTN.interactable=false;
+            machineGunBTTN.interactable=false;
+            areaBTTN.interactable=false;
+        }
     }
 
     public void MainMenu()
