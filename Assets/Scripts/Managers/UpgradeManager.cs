@@ -5,17 +5,45 @@ using UnityEngine.EventSystems;
 public class UpgradeManager : MonoBehaviour,IPointerClickHandler
 {
     turret turretType;
-    public int upgradeCost;
+    public int normalCost=5,machineGunCost=10,areaCost=15;
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(GameManager.Instance.coins>=upgradeCost){
-            Upgrade();
-            GameManager.Instance.RemoveCoins(upgradeCost);
-            upgradeCost*=2;
-        }
+        Upgrade();
     }
 
-    public virtual void Upgrade()
+    public void Upgrade()
     {
+            switch (turretType)
+        {
+            case turret.normal:
+                if(GameManager.Instance.coins<=normalCost)
+                    return;
+                Projectiles.damage*=2;
+                GameManager.Instance.RemoveCoins(normalCost);
+                normalCost*=2;
+                break;
+
+            // case turret.machineGun:
+            //      if(GameManager.Instance.coins<=machineGunCost)
+            //         return;
+            //     GameManager.Instance.RemoveCoins(machineGunCost);
+            //     machineGunCost*=2;
+            //     break;
+
+            // case turret.area:
+            //      if(GameManager.Instance.coins<=areaCost)
+            //         return;
+            //     AreaProjectiles.radius*=1.25f;
+            //     GameManager.Instance.RemoveCoins(areaCost);
+            //     areaCost*=2;
+            //     break;
+
+            case turret.none:
+                break;
+
+            default:
+                Debug.Log("How Are You Here?");
+                break;
+        }
     }
 }

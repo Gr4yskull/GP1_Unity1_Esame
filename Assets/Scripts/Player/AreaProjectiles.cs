@@ -15,7 +15,6 @@ public class AreaProjectiles : UpgradeManager
     //bullet movement
     private void Start()
     {
-        Debug.Log(radius);
         currentRadius=radius;
         rb=GetComponent<Rigidbody>();
         rb.AddForce(transform.forward*speed*Time.deltaTime,ForceMode.Impulse);
@@ -27,15 +26,19 @@ public class AreaProjectiles : UpgradeManager
         if(hasExploded)
             return;
 
+        //checks tag
         if (other.CompareTag("Enemy"))
         {
+            //gets collider
             Collider[] explosionArea=Physics.OverlapSphere(transform.position,currentRadius,interactableLayer);
 
+            //for each collider got
             foreach(Collider enemy in explosionArea)
             {
+                //deals damage
                 enemy.TryGetComponent(out IDamageable damageable);
                 damageable.TakeDamage(damage);
-                Debug.Log("COLPITO");
+                //bool to prevent it from dealing double damage
                 hasExploded=true;
             }
         }

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
     }
+    //event inscription
     public void OnEnable()
     {
         EnemyDamage.OnEnemyDeath+=GetCoins;
@@ -33,11 +34,13 @@ public class GameManager : MonoBehaviour
         EnemyDamage.OnEnemyDeath-=GetCoins;
     }
 
+    //function to add coins that invokes the UI event
     public void GetCoins(int money)
     {
         coins+=money;
         OnCoinsAdded?.Invoke();
     }
+    //function to remove coins that invokes the Ui event
     public void RemoveCoins(int money)
     {
         coins-=money;

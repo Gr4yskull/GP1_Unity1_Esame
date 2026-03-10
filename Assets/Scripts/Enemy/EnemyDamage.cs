@@ -8,11 +8,12 @@ public class EnemyDamage : Enemy,IDamageable
     public static event Action <int> OnEnemyDeath;
     public static event Action OnKill;
 
-
+    //sets attack in case of buff
     public void SetAttack(float buff)
     {
         currentDamagePerHit=damagePerHit+buff;
     }
+    //function applied when hit by a bullet
     public void TakeDamage(float damage)
     {
         currentHealth-=damage;
@@ -23,6 +24,7 @@ public class EnemyDamage : Enemy,IDamageable
         }
     }
 
+    //gives coins and destroys object
     public void Despawn()
     {
         OnEnemyDeath?.Invoke(coins);

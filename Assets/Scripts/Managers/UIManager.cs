@@ -53,6 +53,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //button to go back to the main menu
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -70,6 +71,7 @@ public class UIManager : MonoBehaviour
         coins.text="Coins:"+GameManager.Instance.coins.ToString();
     }
 
+    //updates the kill count
     public void UpdateKillCount()
     {
         enemiesKilled++;

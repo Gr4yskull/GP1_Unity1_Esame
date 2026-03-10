@@ -14,14 +14,15 @@ public class Player : MonoBehaviour,IDamageable
         currentHP=maxHP;
     }
     
-
+    //when something collides if it is an enemy
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
+            //deals damage to the player and destroys the enemy
             enemy=other.GetComponent<EnemyDamage>();
             TakeDamage(enemy.currentDamagePerHit);
-            enemy.Despawn();
+            Destroy(enemy.gameObject);
         }
        
     
