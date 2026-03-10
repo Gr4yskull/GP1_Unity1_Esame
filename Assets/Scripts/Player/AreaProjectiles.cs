@@ -1,19 +1,22 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class AreaProjectiles : MonoBehaviour
+public class AreaProjectiles : UpgradeManager
 {
     Rigidbody rb;
     public float speed=300f;
     [SerializeField] float damage;
     [SerializeField] private LayerMask interactableLayer;
-    [SerializeField] float radius;
+    public static float radius=0.5f;
+    [SerializeField] float currentRadius;
+
     private bool hasExploded=false;
-    private List <Enemy> enemy=new();
 
     //bullet movement
     private void Start()
     {
+        Debug.Log(radius);
+        currentRadius=radius;
         rb=GetComponent<Rigidbody>();
         rb.AddForce(transform.forward*speed*Time.deltaTime,ForceMode.Impulse);
     }
@@ -26,7 +29,7 @@ public class AreaProjectiles : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
-            Collider[] explosionArea=Physics.OverlapSphere(transform.position,radius,interactableLayer);
+            Collider[] explosionArea=Physics.OverlapSphere(transform.position,currentRadius,interactableLayer);
 
             foreach(Collider enemy in explosionArea)
             {
@@ -42,6 +45,6 @@ public class AreaProjectiles : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, currentRadius);
     }
 }
