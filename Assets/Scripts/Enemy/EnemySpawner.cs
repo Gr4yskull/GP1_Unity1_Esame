@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float minRate;
     [SerializeField] float changedRate;
     [SerializeField] public float damageBuff;
-    float currentBuff=0;
+
 
 
 
@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 //resets spawn counter
                 spawnCounter=0;
                 //adds DMG buffs 
-                currentBuff+=damageBuff;
+                damageBuff++;
             }
             
             //timer reset
